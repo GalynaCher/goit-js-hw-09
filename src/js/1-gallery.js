@@ -1,6 +1,10 @@
 
 'use strict'; // Strict mode code
 
+// https://simplelightbox.com/
+import simpleLightbox from "simplelightbox";                // import the SimpleLightbox library
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -86,25 +90,12 @@ const markup = images
 
 gallery.insertAdjacentHTML("afterbegin", markup);                   // gallery data is created dynamically
 
-// const openImage = gallery.addEventListener("click", ev => { 
-
-//   // console.log("ev.target.nodeName: ",ev.target.nodeName);        // debugging records for training
-//   // console.log("ev.target.dataset: ", ev.target.dataset.source);
-
-//   ev.preventDefault();
-      
-//   if (ev.target.nodeName === "IMG") {                               // nothing happens if click outside of the images                
-
-//       const instance = basicLightbox.create(`                       // basicLightbox pattern
-//         <img src="${ev.target.dataset.source}">
-
-// `       )
-//      instance.show()
-//   }
-// });
-
-
-
-
-
-
+let lightbox = new simpleLightbox(".gallery a", {                   // the simpleLightbox pattern
+  captions: true,                                                   // show captions if availabled or not
+  captionSelector: 'img',                                           // set the element where the caption is
+  captionsData: 'alt',                                              // get the caption from given attribute
+  captionPosition: 'bottom',                                        
+  captionDelay: 250,                                                // delay before the caption shows (in ms)
+  captionType: 'attr'                                               // how to get the caption. 
+                                                                    // You can choose between attr, data or text
+});
