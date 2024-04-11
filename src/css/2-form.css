@@ -60,3 +60,8 @@
     color: #FFFFFF;
     margin-top: 16px;
 }
+
+.feedback-form button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}

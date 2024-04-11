@@ -1,9 +1,9 @@
 
-'use strict'; // Strict mode code
-
 // https://simplelightbox.com/
 import simpleLightbox from "simplelightbox";                // import the SimpleLightbox library
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+'use strict'; // Strict mode code
 
 const images = [
   {
